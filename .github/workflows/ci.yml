@@ -30,11 +30,8 @@ jobs:
     - name: Run Selenium Functional Tests
       run: |
         echo "Bắt đầu chạy kiểm thử chức năng tự động với Selenium..."
-        echo "==========================================="
-        echo "PASS: DangNhapTest"
-        echo "PASS: ThemSanPhamTest"
-        echo "PASS: DatHangTest"
-        echo "==========================================="
+        cd SeleniumTesting
+        mvn clean test
       continue-on-error: true
 
     # Bước 5: Chạy kiểm thử hiệu năng (JMeter)

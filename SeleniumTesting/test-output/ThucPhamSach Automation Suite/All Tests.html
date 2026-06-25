@@ -1,0 +1,737 @@
+<html>
+<head>
+<title>TestNG:  All Tests</title>
+<link href="../testng.css" rel="stylesheet" type="text/css" />
+<link href="../my-testng.css" rel="stylesheet" type="text/css" />
+
+<style type="text/css">
+.log { display: none;} 
+.stack-trace { display: none;} 
+</style>
+<script type="text/javascript">
+<!--
+function flip(e) {
+  current = e.style.display;
+  if (current == 'block') {
+    e.style.display = 'none';
+    return 0;
+  }
+  else {
+    e.style.display = 'block';
+    return 1;
+  }
+}
+
+function toggleBox(szDivId, elem, msg1, msg2)
+{
+  var res = -1;  if (document.getElementById) {
+    res = flip(document.getElementById(szDivId));
+  }
+  else if (document.all) {
+    // this is the way old msie versions work
+    res = flip(document.all[szDivId]);
+  }
+  if(elem) {
+    if(res == 0) elem.innerHTML = msg1; else elem.innerHTML = msg2;
+  }
+
+}
+
+function toggleAllBoxes() {
+  if (document.getElementsByTagName) {
+    d = document.getElementsByTagName('div');
+    for (i = 0; i < d.length; i++) {
+      if (d[i].className == 'log') {
+        flip(d[i]);
+      }
+    }
+  }
+}
+
+// -->
+</script>
+
+</head>
+<body>
+<h2 align='center'>All Tests</h2><table border='1' align="center">
+<tr>
+<td>Tests passed/Failed/Skipped:</td><td>43/9/0</td>
+</tr><tr>
+<td>Started on:</td><td>Thu Jun 25 14:39:39 ICT 2026</td>
+</tr>
+<tr><td>Total time:</td><td>482 seconds (482094 ms)</td>
+</tr><tr>
+<td>Included groups:</td><td></td>
+</tr><tr>
+<td>Excluded groups:</td><td></td>
+</tr>
+</table><p/>
+<small><i>(Hover the method name to see the test class name)</i></small><p/>
+<table width='100%' border='1' class='invocation-failed'>
+<tr><td colspan='4' align='center'><b>FAILED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td><b>Attribute(s)</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='tests.SearchFilterTest.TC_TK_01()'><b>TC_TK_01</b><br>Test class: tests.SearchFilterTest<br>Test method: TC-TK-01: Tìm kiếm thành công với tất cả điều kiện</td>
+<td><div><pre>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element located by By.id: price-from (tried for 10 second(s) with 500 milliseconds interval)
+Build info: version: &apos;4.26.0&apos;, revision: &apos;8ccf0219d7&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;21.0.11&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 144.0.7559.97, chrome: {chromedriverVersion: 144.0.7559.133 (7da823b1d59..., userDataDir: C:\WINDOWS\SystemTemp\scope...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:51520}, goog:processID: 2124, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:51520/devtoo..., se:cdpVersion: 144.0.7559.97, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 5455190ede6a01016e493b411b28143e
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
+	at pages.SearchPage.enterPriceFrom(SearchPage.java:49)
+	at tests.SearchFilterTest.TC_TK_01(SearchFilterTest.java:25)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+... Removed 25 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace310604146", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace310604146'><pre>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element located by By.id: price-from (tried for 10 second(s) with 500 milliseconds interval)
+Build info: version: &apos;4.26.0&apos;, revision: &apos;8ccf0219d7&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;21.0.11&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 144.0.7559.97, chrome: {chromedriverVersion: 144.0.7559.133 (7da823b1d59..., userDataDir: C:\WINDOWS\SystemTemp\scope...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:51520}, goog:processID: 2124, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:51520/devtoo..., se:cdpVersion: 144.0.7559.97, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 5455190ede6a01016e493b411b28143e
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
+	at pages.SearchPage.enterPriceFrom(SearchPage.java:49)
+	at tests.SearchFilterTest.TC_TK_01(SearchFilterTest.java:25)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:686)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:992)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at org.testng.TestRunner.privateRun(TestRunner.java:739)
+	at org.testng.TestRunner.run(TestRunner.java:614)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+	at org.testng.TestNG.runSuites(TestNG.java:1112)
+	at org.testng.TestNG.run(TestNG.java:1079)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+</pre></div></td>
+<td>11</td>
+<td>tests.SearchFilterTest@64ec96c6</td></tr>
+<tr>
+<td title='tests.SearchFilterTest.TC_TK_02()'><b>TC_TK_02</b><br>Test class: tests.SearchFilterTest<br>Test method: TC-TK-02: Lọc thất bại do Giá Max nhỏ hơn Giá Min</td>
+<td><div><pre>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element located by By.id: price-from (tried for 10 second(s) with 500 milliseconds interval)
+Build info: version: &apos;4.26.0&apos;, revision: &apos;8ccf0219d7&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;21.0.11&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 144.0.7559.97, chrome: {chromedriverVersion: 144.0.7559.133 (7da823b1d59..., userDataDir: C:\WINDOWS\SystemTemp\scope...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:53651}, goog:processID: 21172, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:53651/devtoo..., se:cdpVersion: 144.0.7559.97, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: de074c5f5e1085cb5679812772aac849
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
+	at pages.SearchPage.enterPriceFrom(SearchPage.java:49)
+	at tests.SearchFilterTest.TC_TK_02(SearchFilterTest.java:41)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+... Removed 25 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace952219856", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace952219856'><pre>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element located by By.id: price-from (tried for 10 second(s) with 500 milliseconds interval)
+Build info: version: &apos;4.26.0&apos;, revision: &apos;8ccf0219d7&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;21.0.11&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 144.0.7559.97, chrome: {chromedriverVersion: 144.0.7559.133 (7da823b1d59..., userDataDir: C:\WINDOWS\SystemTemp\scope...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:53651}, goog:processID: 21172, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:53651/devtoo..., se:cdpVersion: 144.0.7559.97, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: de074c5f5e1085cb5679812772aac849
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
+	at pages.SearchPage.enterPriceFrom(SearchPage.java:49)
+	at tests.SearchFilterTest.TC_TK_02(SearchFilterTest.java:41)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:686)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:992)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at org.testng.TestRunner.privateRun(TestRunner.java:739)
+	at org.testng.TestRunner.run(TestRunner.java:614)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+	at org.testng.TestNG.runSuites(TestNG.java:1112)
+	at org.testng.TestNG.run(TestNG.java:1079)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+</pre></div></td>
+<td>11</td>
+<td>tests.SearchFilterTest@64ec96c6</td></tr>
+<tr>
+<td title='tests.RegisterTest.TC_DK_05()'><b>TC_DK_05</b><br>Test class: tests.RegisterTest<br>Test method: TC-DK-05: Đăng ký thành công khi để trống SĐT</td>
+<td><div><pre>java.lang.AssertionError: Mong đợi đăng ký thành công expected [true] but found [false]
+	at core.ReportAssert.assertContainsAnyVi(ReportAssert.java:43)
+	at tests.RegisterTest.TC_DK_05(RegisterTest.java:82)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+... Removed 28 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace970713705", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace970713705'><pre>java.lang.AssertionError: Mong đợi đăng ký thành công expected [true] but found [false]
+	at org.testng.Assert.fail(Assert.java:111)
+	at org.testng.Assert.failNotEquals(Assert.java:1578)
+	at org.testng.Assert.assertTrue(Assert.java:57)
+	at core.ReportAssert.assertContainsAnyVi(ReportAssert.java:43)
+	at tests.RegisterTest.TC_DK_05(RegisterTest.java:82)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:686)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:992)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at org.testng.TestRunner.privateRun(TestRunner.java:739)
+	at org.testng.TestRunner.run(TestRunner.java:614)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+	at org.testng.TestNG.runSuites(TestNG.java:1112)
+	at org.testng.TestNG.run(TestNG.java:1079)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+</pre></div></td>
+<td>0</td>
+<td>tests.RegisterTest@19b843ba</td></tr>
+<tr>
+<td title='tests.SearchFilterTest.TC_TK_04()'><b>TC_TK_04</b><br>Test class: tests.SearchFilterTest<br>Test method: TC-TK-04: Lọc thất bại do nhập chữ vào ô Giá Min</td>
+<td><div><pre>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element located by By.id: price-from (tried for 10 second(s) with 500 milliseconds interval)
+Build info: version: &apos;4.26.0&apos;, revision: &apos;8ccf0219d7&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;21.0.11&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 144.0.7559.97, chrome: {chromedriverVersion: 144.0.7559.133 (7da823b1d59..., userDataDir: C:\WINDOWS\SystemTemp\scope...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:56464}, goog:processID: 18548, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:56464/devtoo..., se:cdpVersion: 144.0.7559.97, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 7708dceee5f90cad55deb1a09964d1f2
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
+	at pages.SearchPage.enterPriceFrom(SearchPage.java:49)
+	at tests.SearchFilterTest.TC_TK_04(SearchFilterTest.java:75)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+... Removed 25 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace2028285575", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace2028285575'><pre>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element located by By.id: price-from (tried for 10 second(s) with 500 milliseconds interval)
+Build info: version: &apos;4.26.0&apos;, revision: &apos;8ccf0219d7&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;21.0.11&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 144.0.7559.97, chrome: {chromedriverVersion: 144.0.7559.133 (7da823b1d59..., userDataDir: C:\WINDOWS\SystemTemp\scope...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:56464}, goog:processID: 18548, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:56464/devtoo..., se:cdpVersion: 144.0.7559.97, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 7708dceee5f90cad55deb1a09964d1f2
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
+	at pages.SearchPage.enterPriceFrom(SearchPage.java:49)
+	at tests.SearchFilterTest.TC_TK_04(SearchFilterTest.java:75)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:686)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:992)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at org.testng.TestRunner.privateRun(TestRunner.java:739)
+	at org.testng.TestRunner.run(TestRunner.java:614)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+	at org.testng.TestNG.runSuites(TestNG.java:1112)
+	at org.testng.TestNG.run(TestNG.java:1079)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+</pre></div></td>
+<td>11</td>
+<td>tests.SearchFilterTest@64ec96c6</td></tr>
+<tr>
+<td title='tests.SearchFilterTest.TC_TK_05()'><b>TC_TK_05</b><br>Test class: tests.SearchFilterTest<br>Test method: TC-TK-05: Lọc thành công khi bỏ trống Giá Min</td>
+<td><div><pre>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element located by By.id: price-from (tried for 10 second(s) with 500 milliseconds interval)
+Build info: version: &apos;4.26.0&apos;, revision: &apos;8ccf0219d7&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;21.0.11&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 144.0.7559.97, chrome: {chromedriverVersion: 144.0.7559.133 (7da823b1d59..., userDataDir: C:\WINDOWS\SystemTemp\scope...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:51212}, goog:processID: 15496, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:51212/devtoo..., se:cdpVersion: 144.0.7559.97, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 3bf5e20d7e353a8622470c1d7cd1ca9b
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
+	at pages.SearchPage.enterPriceFrom(SearchPage.java:49)
+	at tests.SearchFilterTest.TC_TK_05(SearchFilterTest.java:90)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+... Removed 25 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1681223649", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1681223649'><pre>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element located by By.id: price-from (tried for 10 second(s) with 500 milliseconds interval)
+Build info: version: &apos;4.26.0&apos;, revision: &apos;8ccf0219d7&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;21.0.11&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 144.0.7559.97, chrome: {chromedriverVersion: 144.0.7559.133 (7da823b1d59..., userDataDir: C:\WINDOWS\SystemTemp\scope...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:51212}, goog:processID: 15496, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:51212/devtoo..., se:cdpVersion: 144.0.7559.97, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 3bf5e20d7e353a8622470c1d7cd1ca9b
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
+	at pages.SearchPage.enterPriceFrom(SearchPage.java:49)
+	at tests.SearchFilterTest.TC_TK_05(SearchFilterTest.java:90)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:686)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:992)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at org.testng.TestRunner.privateRun(TestRunner.java:739)
+	at org.testng.TestRunner.run(TestRunner.java:614)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+	at org.testng.TestNG.runSuites(TestNG.java:1112)
+	at org.testng.TestNG.run(TestNG.java:1079)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+</pre></div></td>
+<td>11</td>
+<td>tests.SearchFilterTest@64ec96c6</td></tr>
+<tr>
+<td title='tests.AdminCustomerTest.TC_KH_02()'><b>TC_KH_02</b><br>Test class: tests.AdminCustomerTest<br>Test method: TC-KH-02: Lỗi do nhập Họ tên toàn khoảng trắng</td>
+<td><div><pre>java.lang.AssertionError: Hệ thống từ chối lưu và hiện lỗi do tên bị rỗng sau khi bị hệ thống tự động cắt bỏ dấu cách thừa. expected [true] but found [false]
+	at core.ReportAssert.assertTrue(ReportAssert.java:13)
+	at tests.AdminCustomerTest.TC_KH_02(AdminCustomerTest.java:58)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+... Removed 28 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace438873841", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace438873841'><pre>java.lang.AssertionError: Hệ thống từ chối lưu và hiện lỗi do tên bị rỗng sau khi bị hệ thống tự động cắt bỏ dấu cách thừa. expected [true] but found [false]
+	at org.testng.Assert.fail(Assert.java:111)
+	at org.testng.Assert.failNotEquals(Assert.java:1578)
+	at org.testng.Assert.assertTrue(Assert.java:57)
+	at core.ReportAssert.assertTrue(ReportAssert.java:13)
+	at tests.AdminCustomerTest.TC_KH_02(AdminCustomerTest.java:58)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:686)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:992)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at org.testng.TestRunner.privateRun(TestRunner.java:739)
+	at org.testng.TestRunner.run(TestRunner.java:614)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+	at org.testng.TestNG.runSuites(TestNG.java:1112)
+	at org.testng.TestNG.run(TestNG.java:1079)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+</pre></div></td>
+<td>7</td>
+<td>tests.AdminCustomerTest@769a1df5</td></tr>
+<tr>
+<td title='tests.RegisterTest.TC_DK_01()'><b>TC_DK_01</b><br>Test class: tests.RegisterTest<br>Test method: TC-DK-01: Đăng ký thành công với dữ liệu hợp lệ</td>
+<td><div><pre>java.lang.AssertionError: Mong đợi thông báo đăng ký thành công expected [true] but found [false]
+	at core.ReportAssert.assertContainsAnyVi(ReportAssert.java:43)
+	at tests.RegisterTest.TC_DK_01(RegisterTest.java:29)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+... Removed 28 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace2133591152", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace2133591152'><pre>java.lang.AssertionError: Mong đợi thông báo đăng ký thành công expected [true] but found [false]
+	at org.testng.Assert.fail(Assert.java:111)
+	at org.testng.Assert.failNotEquals(Assert.java:1578)
+	at org.testng.Assert.assertTrue(Assert.java:57)
+	at core.ReportAssert.assertContainsAnyVi(ReportAssert.java:43)
+	at tests.RegisterTest.TC_DK_01(RegisterTest.java:29)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:686)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:992)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at org.testng.TestRunner.privateRun(TestRunner.java:739)
+	at org.testng.TestRunner.run(TestRunner.java:614)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+	at org.testng.TestNG.runSuites(TestNG.java:1112)
+	at org.testng.TestNG.run(TestNG.java:1079)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+</pre></div></td>
+<td>0</td>
+<td>tests.RegisterTest@19b843ba</td></tr>
+<tr>
+<td title='tests.RegisterTest.TC_DK_03()'><b>TC_DK_03</b><br>Test class: tests.RegisterTest<br>Test method: TC-DK-03: Đăng ký thành công khi để trống Email</td>
+<td><div><pre>java.lang.AssertionError: Mong đợi thông báo đăng ký thành công khi email null expected [true] but found [false]
+	at core.ReportAssert.assertContainsAnyVi(ReportAssert.java:43)
+	at tests.RegisterTest.TC_DK_03(RegisterTest.java:56)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+... Removed 28 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace235347435", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace235347435'><pre>java.lang.AssertionError: Mong đợi thông báo đăng ký thành công khi email null expected [true] but found [false]
+	at org.testng.Assert.fail(Assert.java:111)
+	at org.testng.Assert.failNotEquals(Assert.java:1578)
+	at org.testng.Assert.assertTrue(Assert.java:57)
+	at core.ReportAssert.assertContainsAnyVi(ReportAssert.java:43)
+	at tests.RegisterTest.TC_DK_03(RegisterTest.java:56)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:686)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:992)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at org.testng.TestRunner.privateRun(TestRunner.java:739)
+	at org.testng.TestRunner.run(TestRunner.java:614)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+	at org.testng.TestNG.runSuites(TestNG.java:1112)
+	at org.testng.TestNG.run(TestNG.java:1079)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+</pre></div></td>
+<td>0</td>
+<td>tests.RegisterTest@19b843ba</td></tr>
+<tr>
+<td title='tests.SearchFilterTest.TC_TK_03()'><b>TC_TK_03</b><br>Test class: tests.SearchFilterTest<br>Test method: TC-TK-03: Lọc thành công khi bỏ trống Giá Max</td>
+<td><div><pre>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element located by By.id: price-from (tried for 10 second(s) with 500 milliseconds interval)
+Build info: version: &apos;4.26.0&apos;, revision: &apos;8ccf0219d7&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;21.0.11&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 144.0.7559.97, chrome: {chromedriverVersion: 144.0.7559.133 (7da823b1d59..., userDataDir: C:\WINDOWS\SystemTemp\scope...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:57403}, goog:processID: 7692, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:57403/devtoo..., se:cdpVersion: 144.0.7559.97, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 6862e48b9b40d208846af6975796b3fe
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
+	at pages.SearchPage.enterPriceFrom(SearchPage.java:49)
+	at tests.SearchFilterTest.TC_TK_03(SearchFilterTest.java:60)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+... Removed 25 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace274335814", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace274335814'><pre>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element located by By.id: price-from (tried for 10 second(s) with 500 milliseconds interval)
+Build info: version: &apos;4.26.0&apos;, revision: &apos;8ccf0219d7&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;21.0.11&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 144.0.7559.97, chrome: {chromedriverVersion: 144.0.7559.133 (7da823b1d59..., userDataDir: C:\WINDOWS\SystemTemp\scope...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:57403}, goog:processID: 7692, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:57403/devtoo..., se:cdpVersion: 144.0.7559.97, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 6862e48b9b40d208846af6975796b3fe
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
+	at pages.SearchPage.enterPriceFrom(SearchPage.java:49)
+	at tests.SearchFilterTest.TC_TK_03(SearchFilterTest.java:60)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:686)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:992)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at org.testng.TestRunner.privateRun(TestRunner.java:739)
+	at org.testng.TestRunner.run(TestRunner.java:614)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+	at org.testng.TestNG.runSuites(TestNG.java:1112)
+	at org.testng.TestNG.run(TestNG.java:1079)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+</pre></div></td>
+<td>11</td>
+<td>tests.SearchFilterTest@64ec96c6</td></tr>
+</table><p>
+<table width='100%' border='1' class='invocation-passed'>
+<tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td><b>Attribute(s)</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='tests.AdminProductTest.TC_SP_03()'><b>TC_SP_03</b><br>Test class: tests.AdminProductTest<br>Test method: TC-SP-03: Lỗi do bỏ trống Danh mục</td>
+<td></td>
+<td>0</td>
+<td>tests.AdminProductTest@1b410b60</td></tr>
+<tr>
+<td title='tests.AdminProductTest.TC_SP_07()'><b>TC_SP_07</b><br>Test class: tests.AdminProductTest<br>Test method: TC-SP-07: Lỗi do bỏ trống Giá</td>
+<td></td>
+<td>0</td>
+<td>tests.AdminProductTest@1b410b60</td></tr>
+<tr>
+<td title='tests.AdminCustomerTest.TC_KH_07()'><b>TC_KH_07</b><br>Test class: tests.AdminCustomerTest<br>Test method: TC-KH-07: Thêm thành công khi bỏ trống Email</td>
+<td></td>
+<td>2</td>
+<td>tests.AdminCustomerTest@769a1df5</td></tr>
+<tr>
+<td title='tests.RegisterTest.TC_DK_02()'><b>TC_DK_02</b><br>Test class: tests.RegisterTest<br>Test method: TC-DK-02: Đăng ký thất bại do Email không hợp lệ</td>
+<td></td>
+<td>0</td>
+<td>tests.RegisterTest@19b843ba</td></tr>
+<tr>
+<td title='tests.AdminProductTest.TC_SP_15()'><b>TC_SP_15</b><br>Test class: tests.AdminProductTest<br>Test method: TC-SP-15: Thành công khi bỏ trống Mô tả</td>
+<td></td>
+<td>2</td>
+<td>tests.AdminProductTest@1b410b60</td></tr>
+<tr>
+<td title='tests.AdminProductTest.TC_SP_17()'><b>TC_SP_17</b><br>Test class: tests.AdminProductTest<br>Test method: TC-SP-17: Thành công khi không có hình ảnh</td>
+<td></td>
+<td>2</td>
+<td>tests.AdminProductTest@1b410b60</td></tr>
+<tr>
+<td title='tests.RegisterTest.TC_DK_09()'><b>TC_DK_09</b><br>Test class: tests.RegisterTest<br>Test method: TC-DK-09: Đăng ký thất bại do để trống Tên Đăng Nhập (nhập dấu cách)</td>
+<td></td>
+<td>0</td>
+<td>tests.RegisterTest@19b843ba</td></tr>
+<tr>
+<td title='tests.RegisterTest.TC_DK_11()'><b>TC_DK_11</b><br>Test class: tests.RegisterTest<br>Test method: TC-DK-11: Đăng ký thất bại do để trống Họ tên (nhập dấu cách)</td>
+<td></td>
+<td>0</td>
+<td>tests.RegisterTest@19b843ba</td></tr>
+<tr>
+<td title='tests.AdminProductTest.TC_SP_05()'><b>TC_SP_05</b><br>Test class: tests.AdminProductTest<br>Test method: TC-SP-05: Lỗi do bỏ trống Tên SP</td>
+<td></td>
+<td>0</td>
+<td>tests.AdminProductTest@1b410b60</td></tr>
+<tr>
+<td title='tests.AdminCustomerTest.TC_KH_09()'><b>TC_KH_09</b><br>Test class: tests.AdminCustomerTest<br>Test method: TC-KH-09: Thêm thành công khi bỏ trống Số điện thoại</td>
+<td></td>
+<td>2</td>
+<td>tests.AdminCustomerTest@769a1df5</td></tr>
+<tr>
+<td title='tests.SearchFilterTest.TC_TK_07()'><b>TC_TK_07</b><br>Test class: tests.SearchFilterTest<br>Test method: TC-TK-07: Lọc thành công khi chỉ chọn Danh mục cha</td>
+<td></td>
+<td>1</td>
+<td>tests.SearchFilterTest@64ec96c6</td></tr>
+<tr>
+<td title='tests.LoginTest.TC_DN_02()'><b>TC_DN_02</b><br>Test class: tests.LoginTest<br>Test method: TC-DN-02: Đăng nhập thất bại do sai Mật khẩu</td>
+<td></td>
+<td>0</td>
+<td>tests.LoginTest@2462cb01</td></tr>
+<tr>
+<td title='tests.AdminProductTest.TC_SP_14()'><b>TC_SP_14</b><br>Test class: tests.AdminProductTest<br>Test method: TC-SP-14: Lỗi do Mô tả lố ký tự</td>
+<td></td>
+<td>3</td>
+<td>tests.AdminProductTest@1b410b60</td></tr>
+<tr>
+<td title='tests.AdminProductTest.TC_SP_01()'><b>TC_SP_01</b><br>Test class: tests.AdminProductTest<br>Test method: TC-SP-01: Thêm thành công (Tất cả hợp lệ)</td>
+<td></td>
+<td>3</td>
+<td>tests.AdminProductTest@1b410b60</td></tr>
+<tr>
+<td title='tests.AdminCustomerTest.TC_KH_04()'><b>TC_KH_04</b><br>Test class: tests.AdminCustomerTest<br>Test method: TC-KH-04: Lỗi do Tài khoản đã bị trùng</td>
+<td></td>
+<td>2</td>
+<td>tests.AdminCustomerTest@769a1df5</td></tr>
+<tr>
+<td title='tests.AdminProductTest.TC_SP_08()'><b>TC_SP_08</b><br>Test class: tests.AdminProductTest<br>Test method: TC-SP-08: Lỗi do nhập Tồn kho âm</td>
+<td></td>
+<td>0</td>
+<td>tests.AdminProductTest@1b410b60</td></tr>
+<tr>
+<td title='tests.RegisterTest.TC_DK_07()'><b>TC_DK_07</b><br>Test class: tests.RegisterTest<br>Test method: TC-DK-07: Đăng ký thất bại do để trống Mật khẩu</td>
+<td></td>
+<td>0</td>
+<td>tests.RegisterTest@19b843ba</td></tr>
+<tr>
+<td title='tests.LoginTest.TC_DN_05()'><b>TC_DN_05</b><br>Test class: tests.LoginTest<br>Test method: TC-DN-05: Đăng nhập thất bại do để trống Tên đăng nhập</td>
+<td></td>
+<td>0</td>
+<td>tests.LoginTest@2462cb01</td></tr>
+<tr>
+<td title='tests.RegisterTest.TC_DK_08()'><b>TC_DK_08</b><br>Test class: tests.RegisterTest<br>Test method: TC-DK-08: Đăng ký thất bại do Trùng tên đăng nhập</td>
+<td></td>
+<td>0</td>
+<td>tests.RegisterTest@19b843ba</td></tr>
+<tr>
+<td title='tests.SearchFilterTest.TC_TK_08()'><b>TC_TK_08</b><br>Test class: tests.SearchFilterTest<br>Test method: TC-TK-08: Tìm kiếm thành công khi bỏ trống Từ Khóa</td>
+<td></td>
+<td>1</td>
+<td>tests.SearchFilterTest@64ec96c6</td></tr>
+<tr>
+<td title='tests.LoginTest.TC_DN_01()'><b>TC_DN_01</b><br>Test class: tests.LoginTest<br>Test method: TC-DN-01: Đăng nhập thành công với dữ liệu hợp lệ</td>
+<td></td>
+<td>0</td>
+<td>tests.LoginTest@2462cb01</td></tr>
+<tr>
+<td title='tests.AdminCustomerTest.TC_KH_01()'><b>TC_KH_01</b><br>Test class: tests.AdminCustomerTest<br>Test method: TC-KH-01: Thêm thành công (Tất cả dữ liệu hợp lệ)</td>
+<td></td>
+<td>2</td>
+<td>tests.AdminCustomerTest@769a1df5</td></tr>
+<tr>
+<td title='tests.AdminProductTest.TC_SP_19()'><b>TC_SP_19</b><br>Test class: tests.AdminProductTest<br>Test method: TC-SP-19: Thành công khi bỏ trống Hạn SD</td>
+<td></td>
+<td>2</td>
+<td>tests.AdminProductTest@1b410b60</td></tr>
+<tr>
+<td title='tests.AdminProductTest.TC_SP_02()'><b>TC_SP_02</b><br>Test class: tests.AdminProductTest<br>Test method: TC-SP-02: Lỗi do chọn sai cấp Danh mục</td>
+<td></td>
+<td>7</td>
+<td>tests.AdminProductTest@1b410b60</td></tr>
+<tr>
+<td title='tests.RegisterTest.TC_DK_10()'><b>TC_DK_10</b><br>Test class: tests.RegisterTest<br>Test method: TC-DK-10: Đăng ký thất bại do Họ tên lố ký tự</td>
+<td></td>
+<td>0</td>
+<td>tests.RegisterTest@19b843ba</td></tr>
+<tr>
+<td title='tests.AdminProductTest.TC_SP_06()'><b>TC_SP_06</b><br>Test class: tests.AdminProductTest<br>Test method: TC-SP-06: Lỗi do nhập Giá âm</td>
+<td></td>
+<td>0</td>
+<td>tests.AdminProductTest@1b410b60</td></tr>
+<tr>
+<td title='tests.AdminProductTest.TC_SP_04()'><b>TC_SP_04</b><br>Test class: tests.AdminProductTest<br>Test method: TC-SP-04: Lỗi do Tên SP lố ký tự</td>
+<td></td>
+<td>3</td>
+<td>tests.AdminProductTest@1b410b60</td></tr>
+<tr>
+<td title='tests.AdminCustomerTest.TC_KH_08()'><b>TC_KH_08</b><br>Test class: tests.AdminCustomerTest<br>Test method: TC-KH-08: [BUG] Lưu thành công dù nhập chữ cái vào Số điện thoại</td>
+<td></td>
+<td>2</td>
+<td>tests.AdminCustomerTest@769a1df5</td></tr>
+<tr>
+<td title='tests.AdminCustomerTest.TC_KH_05()'><b>TC_KH_05</b><br>Test class: tests.AdminCustomerTest<br>Test method: TC-KH-05: Lỗi do bỏ trống Tài khoản</td>
+<td></td>
+<td>0</td>
+<td>tests.AdminCustomerTest@769a1df5</td></tr>
+<tr>
+<td title='tests.AdminCustomerTest.TC_KH_03()'><b>TC_KH_03</b><br>Test class: tests.AdminCustomerTest<br>Test method: TC-KH-03: Lỗi do bỏ trống Họ và tên</td>
+<td></td>
+<td>0</td>
+<td>tests.AdminCustomerTest@769a1df5</td></tr>
+<tr>
+<td title='tests.AdminProductTest.TC_SP_10()'><b>TC_SP_10</b><br>Test class: tests.AdminProductTest<br>Test method: TC-SP-10: Lỗi do Đơn vị tính lố ký tự</td>
+<td></td>
+<td>3</td>
+<td>tests.AdminProductTest@1b410b60</td></tr>
+<tr>
+<td title='tests.AdminProductTest.TC_SP_16()'><b>TC_SP_16</b><br>Test class: tests.AdminProductTest<br>Test method: TC-SP-16: Lỗi upload file không phải ảnh</td>
+<td></td>
+<td>0</td>
+<td>tests.AdminProductTest@1b410b60</td></tr>
+<tr>
+<td title='tests.AdminProductTest.TC_SP_13()'><b>TC_SP_13</b><br>Test class: tests.AdminProductTest<br>Test method: TC-SP-13: Thành công khi bỏ trống Nguồn gốc</td>
+<td></td>
+<td>2</td>
+<td>tests.AdminProductTest@1b410b60</td></tr>
+<tr>
+<td title='tests.LoginTest.TC_DN_03()'><b>TC_DN_03</b><br>Test class: tests.LoginTest<br>Test method: TC-DN-03: Đăng nhập thất bại do để trống Mật khẩu</td>
+<td></td>
+<td>0</td>
+<td>tests.LoginTest@2462cb01</td></tr>
+<tr>
+<td title='tests.AdminProductTest.TC_SP_11()'><b>TC_SP_11</b><br>Test class: tests.AdminProductTest<br>Test method: TC-SP-11: Thành công khi bỏ trống Đơn vị tính</td>
+<td></td>
+<td>2</td>
+<td>tests.AdminProductTest@1b410b60</td></tr>
+<tr>
+<td title='tests.AdminProductTest.TC_SP_12()'><b>TC_SP_12</b><br>Test class: tests.AdminProductTest<br>Test method: TC-SP-12: Lỗi do Nguồn gốc lố ký tự</td>
+<td></td>
+<td>3</td>
+<td>tests.AdminProductTest@1b410b60</td></tr>
+<tr>
+<td title='tests.LoginTest.TC_DN_04()'><b>TC_DN_04</b><br>Test class: tests.LoginTest<br>Test method: TC-DN-04: Đăng nhập thất bại do Tên đăng nhập không tồn tại</td>
+<td></td>
+<td>0</td>
+<td>tests.LoginTest@2462cb01</td></tr>
+<tr>
+<td title='tests.SearchFilterTest.TC_TK_06()'><b>TC_TK_06</b><br>Test class: tests.SearchFilterTest<br>Test method: TC-TK-06: Lọc thành công khi chỉ chọn Danh mục con</td>
+<td></td>
+<td>13</td>
+<td>tests.SearchFilterTest@64ec96c6</td></tr>
+<tr>
+<td title='tests.RegisterTest.TC_DK_04()'><b>TC_DK_04</b><br>Test class: tests.RegisterTest<br>Test method: TC-DK-04: Đăng ký thất bại do SĐT lố ký tự</td>
+<td></td>
+<td>0</td>
+<td>tests.RegisterTest@19b843ba</td></tr>
+<tr>
+<td title='tests.AdminProductTest.TC_SP_18()'><b>TC_SP_18</b><br>Test class: tests.AdminProductTest<br>Test method: TC-SP-18: Lỗi do nhập sai định dạng Hạn SD</td>
+<td></td>
+<td>0</td>
+<td>tests.AdminProductTest@1b410b60</td></tr>
+<tr>
+<td title='tests.RegisterTest.TC_DK_06()'><b>TC_DK_06</b><br>Test class: tests.RegisterTest<br>Test method: TC-DK-06: Đăng ký thất bại do Mật khẩu không hợp lệ</td>
+<td></td>
+<td>0</td>
+<td>tests.RegisterTest@19b843ba</td></tr>
+<tr>
+<td title='tests.AdminProductTest.TC_SP_09()'><b>TC_SP_09</b><br>Test class: tests.AdminProductTest<br>Test method: TC-SP-09: Lỗi do bỏ trống Tồn kho</td>
+<td></td>
+<td>1</td>
+<td>tests.AdminProductTest@1b410b60</td></tr>
+<tr>
+<td title='tests.AdminCustomerTest.TC_KH_06()'><b>TC_KH_06</b><br>Test class: tests.AdminCustomerTest<br>Test method: TC-KH-06: Lỗi do sai định dạng Email</td>
+<td></td>
+<td>0</td>
+<td>tests.AdminCustomerTest@769a1df5</td></tr>
+</table><p>
+</body>
+</html>
