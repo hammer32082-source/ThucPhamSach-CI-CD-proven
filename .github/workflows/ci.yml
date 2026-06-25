@@ -13,14 +13,15 @@ jobs:
     steps:
     # Bước 1: Lấy code từ GitHub về máy chủ giả lập
     - name: Checkout Code
-      uses: actions/checkout@v3
+      uses: actions/checkout@v4
 
     # Bước 2: Cài đặt môi trường Java
     - name: Set up JDK 17
-      uses: actions/setup-java@v3
+      uses: actions/setup-java@v4
       with:
         java-version: '17'
         distribution: 'temurin'
+
     # Bước 3: Chạy kiểm thử tự động (Selenium - Java)
     - name: Run Selenium Functional Tests
       run: |
@@ -29,9 +30,9 @@ jobs:
         mvn clean test
       continue-on-error: true
 
-    # Bước 5: Lưu lại báo cáo kết quả (Nếu có)
+    # Bước 4: Lưu lại báo cáo kết quả (Nếu có)
     - name: Upload Test Reports
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
         name: Selenium-Reports
         path: SeleniumTesting/target/surefire-reports/
