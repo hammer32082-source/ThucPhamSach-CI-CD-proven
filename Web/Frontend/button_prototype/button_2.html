@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Bubble Goo Button</title>
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
+
+  <style>
+    /* ====== VARIABLES ====== */
+    :root {
+      --green-700: #15803d;
+      --green-500: #22c55e;
+      --green:     #90feb5;
+    }
+
+    * { box-sizing: border-box; }
+
+    html, body {
+      width: 100%;
+      height: 100%;
+      margin: 0;
+      text-align: center;
+      background: #fff; /* ← nền trắng */
+    }
+
+    body {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      /* đã xóa animation: hue-rotate để giữ nguyên màu gradient */
+    }
+
+    /* ====== BUTTON BASE ====== */
+    .button {
+      -webkit-font-smoothing: antialiased;
+      border: none;
+      display: inline-block;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 14px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      padding: 20px 40px;
+      text-transform: uppercase;
+      text-decoration: none;
+      cursor: pointer;
+      user-select: none;
+      transition: color 0.15s ease-out, transform 0.1s ease-out;
+    }
+
+    .button:active { transform: scale(0.95); }
+
+    /* ====== BUBBLE BUTTON ====== */
+    .button--bubble {
+      position: relative;
+      z-index: 2;
+      background: none;
+      color: var(--green-700); /* text xanh lúc ban đầu */
+    }
+
+    .button--bubble:hover {
+      background: none;
+      color: #fff; /* text trắng khi hover (nằm trên nền gradient) */
+    }
+
+    /* Khi hover → circle và effect-button đổi sang gradient */
+    .button--bubble:hover + .button--bubble__effect-container .circle,
+    .button--bubble:hover + .button--bubble__effect-container .button {
+      background: linear-gradient(135deg, var(--green-700), var(--green-500));
+    }
+
+    /* ====== CONTAINER ====== */
+    .button--bubble__container {
+      position: relative;
+      display: inline-block;
+      /* Viền xanh giúp nhìn thấy nút trước khi hover */
+      border: 2px solid var(--green-700);
+    }
+
+    .button--bubble__container .effect-button {
+      position: absolute;
+      width: 50%;
+      height: 25%;
+      top: 50%;
+      left: 25%;
+      transform: translateY(-50%);
+      background: #fff; /* ← trắng ban đầu (vô hình trên nền trắng) */
+      z-index: 1;
+      transition: background 0.1s ease-out;
+    }
+
+    /* ====== EFFECT CONTAINER ====== */
+    .button--bubble__effect-container {
+      position: absolute;
+      width: 200%;
+      height: 400%;
+      top: -150%;
+      left: -50%;
+      filter: url("#goo");
+      pointer-events: none;
+      transition: all 0.1s ease-out;
+    }
+
+    /* ====== CIRCLES (goo bubbles) ====== */
+    .circle {
+      position: absolute;
+      width: 25px;
+      height: 25px;
+      border-radius: 50%;
+      background: #fff; /* ← trắng ban đầu (vô hình) */
+      transition: background 0.1s ease-out;
+    }
+
+    .circle.top-left    { top: 40%;    left: 27%;  }
+    .circle.bottom-right{ bottom: 40%; right: 27%; }
+
+    /* ====== SVG GOO FILTER ====== */
+    .goo {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      visibility: hidden;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- SVG GOO FILTER (giữ nguyên) -->
+  <svg xmlns="http://www.w3.org/2000/svg" class="goo">
+    <defs>
+      <filter id="goo">
+        <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />
+        <feColorMatrix
+          in="blur"
+          mode="matrix"
+          values="1 0 0 0 0
+                  0 1 0 0 0
+                  0 0 1 0 0
+                  0 0 0 19 -9"
+          result="goo"
+        />
+        <feComposite in="SourceGraphic" in2="goo" />
+      </filter>
+    </defs>
+  </svg>
+
+  <!-- BUTTON -->
+  <span class="button--bubble__container">
+    <a href="#" class="button button--bubble">Hover me</a>
+
+    <span class="button--bubble__effect-container">
+      <span class="circle top-left"></span>
+      <span class="circle top-left"></span>
+      <span class="circle top-left"></span>
+
+      <span class="button effect-button"></span>
+
+      <span class="circle bottom-right"></span>
+      <span class="circle bottom-right"></span>
+      <span class="circle bottom-right"></span>
+    </span>
+  </span>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.3/TweenMax.min.js"></script>
+
+  <!-- GSAP giữ nguyên hoàn toàn -->
+  <script>
+    $('.button--bubble').each(function () {
+      const $btn      = $(this);
+      const $circlesTL = $btn.parent().find('.circle.top-left');
+      const $circlesBR = $btn.parent().find('.circle.bottom-right');
+      const $effectBtn = $btn.parent().find('.effect-button');
+
+      const tl     = new TimelineLite();
+      const tl2    = new TimelineLite();
+      const master = new TimelineLite({ paused: true });
+
+      tl.set($circlesTL, { x: 0, y: 0, rotation: -45 });
+      tl.to($circlesTL, 1.2, { x: -25, y: -25, scaleY: 2, ease: SlowMo.ease.config(0.1, 0.7, false) })
+        .to($circlesTL, 1, { scale: 0, opacity: 0 });
+
+      tl2.set($circlesBR, { x: 0, y: 0, rotation: 45 });
+      tl2.to($circlesBR, 1.2, { x: 30, y: 30, ease: SlowMo.ease.config(0.1, 0.7, false) })
+         .to($circlesBR, 1, { scale: 0, opacity: 0 });
+
+      master.add(tl);
+      master.to($effectBtn, 0.8, { scaleY: 1.1 }, 0.1);
+      master.add(tl2, 0.2);
+      master.to($effectBtn, 1.6, { scale: 1, ease: Elastic.easeOut.config(1.2, 0.4) }, 1);
+
+      master.timeScale(2.5);
+
+      $btn.on('mouseenter', function () { master.restart(); });
+    });
+  </script>
+
+</body>
+</html>

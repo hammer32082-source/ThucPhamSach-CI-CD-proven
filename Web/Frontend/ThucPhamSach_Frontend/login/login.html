@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đăng nhập - Thực và vị</title>
+    <link rel="stylesheet" href="../common/common.css">
+    <link rel="stylesheet" href="../common/goo-button.css">
+    <link rel="stylesheet" href="login.css">
+</head>
+<body>
+    <header class="site-header"></header>
+
+    <main class="auth-shell page-shell">
+        <section class="auth-card glass-card">
+            <p class="eyebrow">Chào mừng trở lại</p>
+            <h1>Đăng nhập</h1>
+            <p class="auth-copy">Đăng nhập để thêm sản phẩm vào giỏ hàng và đặt hàng.</p>
+
+            <div class="status-box is-hidden" id="login-status" role="status"></div>
+
+            <form class="form-grid" id="login-form">
+                <div class="field">
+                    <label for="tenDangNhap">Tên đăng nhập</label>
+                    <input id="tenDangNhap" name="tenDangNhap" autocomplete="username" required>
+                </div>
+                <div class="field">
+                    <label for="matKhau">Mật khẩu</label>
+                    <input id="matKhau" name="matKhau" type="password" autocomplete="current-password" required>
+                </div>
+                <button class="primary-button" type="submit">Đăng nhập</button>
+            </form>
+
+            <p class="auth-switch">Chưa có tài khoản? <a href="../register/register.html">Đăng ký ngay</a></p>
+        </section>
+    </main>
+
+    <script src="../common/api.js"></script>
+    <script src="../common/category-menu.js"></script>
+    <script src="../common/goo-button.js"></script>
+    <script src="login.js"></script>
+</body>
+</html>

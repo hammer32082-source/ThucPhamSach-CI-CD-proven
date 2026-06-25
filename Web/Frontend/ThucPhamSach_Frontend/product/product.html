@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chi tiết sản phẩm - Thực và vị</title>
+    <link rel="stylesheet" href="../common/common.css">
+    <link rel="stylesheet" href="../common/goo-button.css">
+    <link rel="stylesheet" href="product.css">
+</head>
+
+<body>
+    <header class="site-header"></header>
+
+    <main class="page-shell product-detail-shell">
+        <a class="back-link" href="../index.html#products">← Quay lại danh sách sản phẩm</a>
+        <div class="status-box" id="product-detail-status">Đang tải sản phẩm...</div>
+        <article class="product-detail is-hidden" id="product-detail">
+            <div class="product-main-column">
+                <div class="product-detail-image-wrap">
+                    <img id="product-detail-image" alt="">
+                </div>
+                <section class="product-information">
+                    <h2>Thông tin sản phẩm</h2>
+                    <dl class="product-facts">
+                        <div><dt>Mã sản phẩm</dt><dd id="product-detail-id"></dd></div>
+                        <div><dt>Danh mục</dt><dd id="product-detail-category-info"></dd></div>
+                        <div><dt>Đơn vị tính</dt><dd id="product-detail-unit"></dd></div>
+                        <div><dt>Nguồn gốc</dt><dd id="product-detail-origin"></dd></div>
+                        <div><dt>Tồn kho</dt><dd id="product-detail-stock"></dd></div>
+                        <div><dt>Hạn sử dụng</dt><dd id="product-detail-expiry"></dd></div>
+                    </dl>
+                    <div class="product-description">
+                        <h3>Mô tả chi tiết</h3>
+                        <p id="product-detail-description"></p>
+                    </div>
+                </section>
+            </div>
+            <aside class="product-purchase-card">
+                <span class="product-category" id="product-detail-category"></span>
+                <h1 id="product-detail-name"></h1>
+                <p class="product-detail-price" id="product-detail-price"></p>
+                <div class="purchase-highlight">
+                    <strong>Cam kết thực phẩm sạch</strong>
+                    <span>Nguồn gốc rõ ràng · Chọn lọc kỹ · Giao hàng nhanh</span>
+                </div>
+                <div class="quantity-row">
+                    <label for="product-quantity">Số lượng</label>
+                    <input id="product-quantity" type="number" min="1" value="1">
+                </div>
+                <div class="product-detail-actions">
+                    <button class="primary-button" type="button" id="add-product-to-cart">Thêm vào giỏ hàng</button>
+                    <button class="primary-button" type="button" id="buy-product-now">Mua ngay</button>
+                </div>
+            </aside>
+        </article>
+    </main>
+
+    <footer class="simple-footer" id="footer"></footer>
+
+    <script src="../common/api.js"></script>
+    <script src="../common/category-menu.js"></script>
+    <script src="../common/goo-button.js"></script>
+    <script src="product.js"></script>
+</body>
+
+</html>

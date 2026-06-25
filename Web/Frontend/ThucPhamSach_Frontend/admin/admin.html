@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quản trị - Thực và vị</title>
+    <link rel="stylesheet" href="../common/common.css">
+    <link rel="stylesheet" href="../common/goo-button.css">
+    <link rel="stylesheet" href="admin.css">
+</head>
+
+<body>
+    <header class="site-header"></header>
+
+    <main class="page-shell admin-shell">
+        <div class="admin-heading" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px;">
+            <div>
+                <p class="eyebrow">Bảng điều khiển</p>
+                <h1>Quản trị thực phẩm sạch</h1>
+            </div>
+            <button class="primary-button" type="button" id="start-add-product" style="display: none;">+ Thêm sản phẩm</button>
+        </div>
+
+        <div class="admin-tabs">
+            <button class="tab-link apply-goo is-active" data-tab="categories">Danh mục</button>
+            <button class="tab-link apply-goo" data-tab="products">Sản phẩm</button>
+            <button class="tab-link apply-goo" data-tab="customers">Khách hàng</button>
+            <button class="tab-link apply-goo" data-tab="orders">Đơn hàng</button>
+        </div>
+
+        <div class="status-box is-hidden" id="admin-status"></div>
+
+        <!-- Categories panel -->
+        <section class="admin-panel" data-panel="categories">
+            <form class="glass-card admin-form category-form" id="category-form-card">
+                <div class="category-form-header">
+                    <h2 id="category-form-title">Thêm danh mục mới</h2>
+                    <p class="form-hint" id="category-form-hint">Điền tên danh mục cha và/hoặc danh mục con. Bạn có thể chỉ điền một trong hai.</p>
+                </div>
+                <input type="hidden" id="category-id">
+                <div class="field">
+                    <label for="category-parent-name">Tên danh mục cha</label>
+                    <input id="category-parent-name" placeholder="VD: Ngũ cốc, Rau củ, Sữa các loại...">
+                    <p class="field-note">Để trống nếu không muốn thêm danh mục cha mới.</p>
+                </div>
+                <div class="field">
+                    <label for="category-child-name">Tên danh mục con</label>
+                    <div id="child-names-container">
+                        <input id="category-child-name" placeholder="VD: Sữa chua, Sữa tươi..." class="child-name-input">
+                    </div>
+                    <button type="button" id="add-child-name-btn" class="primary-button" style="margin-top: 8px;">+ Thêm danh mục con khác</button>
+                    <p class="field-note">Để trống nếu không muốn thêm danh mục con mới.</p>
+                </div>
+                <div class="btn-row">
+                    <button class="primary-button" type="submit" id="category-submit">Thêm danh mục</button>
+                    <button class="primary-button" type="button" id="reset-category">Hủy</button>
+                </div>
+            </form>
+
+            <div class="glass-card admin-list category-tree-card" id="category-list-wrap">
+                <div class="category-tree-toolbar">
+                    <p class="list-stats" id="category-stats">Đang tải...</p>
+                </div>
+                <div id="category-list"></div>
+            </div>
+        </section>
+
+        <section class="admin-panel is-hidden" data-panel="products">
+            <div class="admin-list" id="product-list"></div>
+            <div class="order-pagination" id="product-pagination" style="display: flex; justify-content: center; align-items: center; gap: 16px; margin-top: 24px; margin-bottom: 24px;">
+                <button class="ghost-button pagination-btn" id="product-prev-btn" disabled>Trước</button>
+                <span class="pagination-info" id="product-pagination-info" style="font-size: 0.9rem; color: var(--muted); font-weight: 500;">Trang 1 / 1 · 0 kết quả</span>
+                <button class="ghost-button pagination-btn" id="product-next-btn" disabled>Sau</button>
+            </div>
+        </section>
+
+        <!-- Product Modal -->
+        <div class="modal-overlay" id="product-modal" style="display: none;">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2 id="product-modal-title">Thêm sản phẩm</h2>
+                    <button type="button" class="modal-close" id="close-product-modal">&times;</button>
+                </div>
+                <form class="modal-body product-form" id="product-form">
+                    <input type="hidden" id="product-id">
+                    <div class="form-grid">
+                        <!-- Row 1: Category and Product Name -->
+                        <div class="form-row">
+                            <div class="field">
+                                <label for="product-category">Danh mục</label>
+                                <select id="product-category" required></select>
+                            </div>
+                            <div class="field">
+                                <label for="product-name">Tên sản phẩm</label>
+                                <input id="product-name" required>
+                            </div>
+                        </div>
+                        
+                        <!-- Row 2: Price and Stock -->
+                        <div class="form-row">
+                            <div class="field">
+                                <label for="product-price">Giá</label>
+                                <input id="product-price" type="number" min="0" step="1000" required>
+                            </div>
+                            <div class="field">
+                                <label for="product-stock">Tồn kho</label>
+                                <input id="product-stock" type="number" min="0" required>
+                            </div>
+                        </div>
+                        
+                        <!-- Row 3: Weight and Origin -->
+                        <div class="form-row">
+                            <div class="field">
+                                <label for="product-unit">Trọng lượng</label>
+                                <input id="product-unit">
+                            </div>
+                            <div class="field">
+                                <label for="product-origin">Nguồn gốc</label>
+                                <input id="product-origin">
+                            </div>
+                        </div>
+                        
+                        <!-- Row 4: Detailed Description -->
+                        <div class="form-row">
+                            <div class="field product-description-field">
+                                <label for="product-description">Mô tả chi tiết sản phẩm</label>
+                                <textarea id="product-description" rows="3" maxlength="4000"
+                                    spellcheck="false" autocomplete="off" autocorrect="off"
+                                    placeholder="Nhập thành phần, đặc điểm, cách bảo quản, hướng dẫn sử dụng..."></textarea>
+                            </div>
+                        </div>
+                        
+                        <!-- Row 5: Product Image and Expiry Date -->
+                        <div class="form-row">
+                            <div class="field">
+                                <label for="product-image">Hình ảnh sản phẩm</label>
+                                <div class="file-input-wrapper">
+                                    <input id="product-image" type="file" accept="image/*" class="file-input-hidden">
+                                    <button type="button" class="file-input-button" id="product-image-button">Chọn hình ảnh</button>
+                                    <button type="button" class="file-input-button" id="product-image-change" style="display: none;">Đổi ảnh</button>
+                                    <button type="button" class="file-input-button danger-button" id="product-image-delete" style="display: none;">Xóa ảnh</button>
+                                </div>
+                                <div id="product-image-preview-wrap" class="product-image-preview-container" style="display: none;">
+                                    <img id="product-image-preview"
+                                        style="width: 100%; height: 100%; object-fit: cover; display: block;">
+                                </div>
+                            </div>
+                            <div class="field">
+                                <label for="product-expiry">Hạn sử dụng</label>
+                                <input id="product-expiry" type="date">
+                            </div>
+                        </div>
+                        
+                        <!-- Row 6: Update and Cancel buttons -->
+                        <div class="form-row form-actions-row">
+                            <button class="primary-button" type="submit" id="save-product">Đăng sản phẩm</button>
+                            <button class="primary-button" type="button" id="reset-product">Hủy</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <section class="admin-panel is-hidden" data-panel="customers">
+            <div class="customer-header-row" style="display: flex; align-items: center; gap: 12px; margin-bottom: 16px;">
+                <h2 style="margin: 0;">Khách hàng</h2>
+                <span class="order-badge" id="customer-total-badge">0 khách hàng</span>
+                <button class="primary-button" id="customer-add-toggle-btn" style="margin-left: auto;">+ Thêm khách hàng</button>
+            </div>
+
+            <form class="search-form" id="customer-search" style="margin-bottom: 16px; display: block;">
+                <input id="customer-keyword" placeholder="Tìm theo tên, số điện thoại hoặc email..." style="width: 100%; box-sizing: border-box;">
+            </form>
+
+            <div class="customer-add-form glass-card is-hidden" id="customer-add-form-container" style="margin-bottom: 16px; display: none;">
+                <form id="customer-add-form" class="form-grid">
+                    <div class="form-row">
+                        <div class="field">
+                            <label for="new-customer-name">Họ và tên</label>
+                            <input id="new-customer-name" required>
+                        </div>
+                        <div class="field">
+                            <label for="new-customer-username">Tài khoản</label>
+                            <input id="new-customer-username" required>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="field">
+                            <label for="new-customer-email">Email</label>
+                            <input id="new-customer-email" type="email">
+                        </div>
+                        <div class="field">
+                            <label for="new-customer-phone">Số điện thoại</label>
+                            <input id="new-customer-phone" type="tel">
+                        </div>
+                    </div>
+                    <div class="form-row form-actions-row" style="justify-content: flex-end; margin-top: 12px;">
+                        <button class="ghost-button" type="button" id="customer-add-cancel-btn">Hủy</button>
+                        <button class="primary-button" type="submit" id="customer-add-save-btn">Lưu khách hàng</button>
+                    </div>
+                </form>
+            </div>
+
+            <div class="customer-table-container">
+                <table class="customer-table">
+                    <thead>
+                        <tr>
+                            <th>Tên</th>
+                            <th>Tài khoản</th>
+                            <th>Email</th>
+                            <th>SĐT</th>
+                            <th style="text-align: center; width: 100px;">Hành động</th>
+                        </tr>
+                    </thead>
+                    <tbody id="customer-list">
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="order-pagination" id="customer-pagination" style="display: flex; justify-content: center; align-items: center; gap: 16px; margin-top: 24px; margin-bottom: 24px;">
+                <button class="ghost-button pagination-btn" id="customer-prev-btn" disabled>Trước</button>
+                <span class="pagination-info" id="customer-pagination-info" style="font-size: 0.9rem; color: var(--muted); font-weight: 500;">Trang 1 / 1 · 0 kết quả</span>
+                <button class="ghost-button pagination-btn" id="customer-next-btn" disabled>Sau</button>
+            </div>
+        </section>
+
+        <section class="admin-panel orders-admin-panel is-hidden" data-panel="orders">
+            <div class="order-header-row" style="display: flex; align-items: baseline; gap: 12px; margin-bottom: 16px;">
+                <h2 style="margin: 0;">Đơn hàng</h2>
+                <span class="order-badge" id="order-total-badge">0 đơn hàng</span>
+            </div>
+
+            <div class="order-metrics" style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 16px;">
+                <div class="metric-card" style="background: rgba(245, 245, 240, 0.8); padding: 16px; border-radius: var(--radius); border: 1px solid var(--line);">
+                    <p class="metric-label" style="margin: 0 0 8px 0; font-size: 0.9rem; color: var(--muted);">Tổng đơn</p>
+                    <p class="metric-value" id="metric-total-orders" style="margin: 0; font-size: 1.8rem; font-weight: 800;">0</p>
+                </div>
+                <div class="metric-card" style="background: rgba(245, 245, 240, 0.8); padding: 16px; border-radius: var(--radius); border: 1px solid var(--line);">
+                    <p class="metric-label" style="margin: 0 0 8px 0; font-size: 0.9rem; color: var(--muted);">Chờ xử lý</p>
+                    <p class="metric-value" id="metric-pending-orders" style="margin: 0; font-size: 1.8rem; font-weight: 800;">0</p>
+                </div>
+            </div>
+
+            <div class="order-filters" id="order-filter-pills" style="display: flex; gap: 8px; margin-bottom: 16px; overflow-x: auto; padding-bottom: 4px;">
+                <button class="filter-pill is-active" data-filter="all">Tất cả (0)</button>
+                <button class="filter-pill" data-filter="cho_xac_nhan">Chờ xác nhận (0)</button>
+                <button class="filter-pill" data-filter="da_xac_nhan">Đã xác nhận (0)</button>
+                <button class="filter-pill" data-filter="da_giao">Đã giao (0)</button>
+                <button class="filter-pill" data-filter="da_huy">Đã hủy (0)</button>
+            </div>
+
+            <form class="search-form" id="order-search-form" style="margin-bottom: 24px; display: block;">
+                <input id="order-keyword" placeholder="Tìm theo mã đơn, tên khách hoặc số điện thoại..." style="width: 100%; box-sizing: border-box;">
+            </form>
+
+            <div class="admin-list" id="order-list"></div>
+            
+            <div class="order-pagination" id="order-pagination" style="display: flex; justify-content: center; align-items: center; gap: 16px; margin-top: 24px; margin-bottom: 24px;">
+                <button class="ghost-button pagination-btn" id="order-prev-btn" disabled>Trước</button>
+                <span class="pagination-info" id="order-pagination-info" style="font-size: 0.9rem; color: var(--muted); font-weight: 500;">Trang 1 / 1 · 0 kết quả</span>
+                <button class="ghost-button pagination-btn" id="order-next-btn" disabled>Sau</button>
+            </div>
+        </section>
+    </main>
+
+    <script src="../common/api.js"></script>
+    <script src="../common/category-menu.js"></script>
+    <script src="../signalr/signalr-client.js"></script>
+    <script src="../common/goo-button.js"></script>
+    <script src="admin.js"></script>
+</body>
+
+</html>

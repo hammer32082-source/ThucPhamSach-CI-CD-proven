@@ -1,0 +1,64 @@
+/* ====== GOO BUTTON EFFECT ====== */
+:root {
+  --goo-green-700: #15803d;
+  --goo-green-500: #22c55e;
+}
+
+.button--bubble__container {
+  position: relative;
+  display: inline-flex;
+  white-space: nowrap;
+}
+
+.button--bubble {
+  position: relative;
+  z-index: 2;
+  background: none !important;
+}
+
+.button--bubble:active { transform: scale(0.95); }
+
+.button--bubble:hover,
+.button--bubble.is-active {
+  background: none !important;
+  color: #fff !important;
+}
+
+.button--bubble:hover + .button--bubble__effect-container,
+.button--bubble.is-active + .button--bubble__effect-container {
+  opacity: 1;
+}
+
+.button--bubble__effect-container {
+  position: absolute;
+  width: 200%;
+  height: 400%;
+  top: -150%;
+  left: -50%;
+  filter: url("#goo");
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.15s ease-out;
+}
+
+.button--bubble__effect-container .button-bg {
+  position: absolute;
+  width: 50%;
+  height: 25%;
+  top: 50%;
+  left: 25%;
+  transform: translateY(-50%);
+  background: linear-gradient(135deg, var(--goo-green-700), var(--goo-green-500));
+  z-index: 1;
+}
+
+.button--bubble__effect-container .circle {
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--goo-green-700), var(--goo-green-500));
+}
+
+.button--bubble__effect-container .circle.top-left { top: 40%; left: 27%; }
+.button--bubble__effect-container .circle.bottom-right { bottom: 40%; right: 27%; }

@@ -1,0 +1,6 @@
+projectKey=ThucPhamSach
+serverUrl=http://localhost:9000
+serverVersion=26.6.0.123539
+dashboardUrl=http://localhost:9000/dashboard?id=ThucPhamSach
+ceTaskId=19fcb083-f5ee-486d-a932-5ec70af9f1fd
+ceTaskUrl=http://localhost:9000/api/ce/task?id=19fcb083-f5ee-486d-a932-5ec70af9f1fd

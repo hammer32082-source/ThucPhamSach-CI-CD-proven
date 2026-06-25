@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giỏ hàng - Thực và vị</title>
+    <link rel="stylesheet" href="../common/common.css">
+    <link rel="stylesheet" href="../common/goo-button.css">
+    <link rel="stylesheet" href="cart.css">
+</head>
+
+<body>
+    <header class="site-header"></header>
+
+    <main class="page-shell cart-shell">
+        <section>
+            <div class="cart-heading">
+                <div>
+                    <p class="eyebrow">Giỏ hàng</p>
+                    <h1>Sản phẩm đã chọn</h1>
+                </div>
+                <button class="primary-button" type="button" id="clear-cart">Xóa giỏ hàng</button>
+            </div>
+
+            <div class="status-box" id="cart-status" role="status">Đang tải giỏ hàng...</div>
+            <div class="cart-list" id="cart-list"></div>
+        </section>
+
+        <aside class="checkout-card glass-card" id="checkout">
+            <p class="eyebrow">Thanh toán</p>
+            <h2>Tổng tiền</h2>
+            <div class="summary-row">
+                <span>Tạm tính</span>
+                <strong id="cart-total">0 VND</strong>
+            </div>
+            <form class="form-grid" id="checkout-form">
+                <div class="field">
+                    <label for="diaChiGiao">Địa chỉ giao hàng</label>
+                    <textarea id="diaChiGiao" name="diaChiGiao" rows="3"></textarea>
+                </div>
+                <div class="field">
+                    <label for="phuongThucThanhToan">Phương thức thanh toán</label>
+                    <select id="phuongThucThanhToan" name="phuongThucThanhToan">
+                        <option value="COD">COD</option>
+                    </select>
+                </div>
+                <button class="primary-button" type="submit">Đặt hàng</button>
+            </form>
+        </aside>
+    </main>
+
+    <script src="../common/api.js"></script>
+    <script src="../common/category-menu.js"></script>
+    <script src="../signalr/signalr-client.js"></script>
+    <script src="../common/goo-button.js"></script>
+    <script src="cart.js"></script>
+</body>
+
+</html>

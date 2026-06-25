@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đơn hàng - Thực và vị</title>
+    <link rel="stylesheet" href="../common/common.css">
+    <link rel="stylesheet" href="../common/goo-button.css">
+    <link rel="stylesheet" href="orders.css">
+</head>
+
+<body>
+    <header class="site-header"></header>
+
+    <main class="page-shell orders-shell">
+        <div class="orders-heading">
+            <p class="eyebrow">Đơn hàng của tôi</p>
+            <h1>Lịch sử mua hàng</h1>
+        </div>
+        <div class="status-box" id="orders-status">Đang tải đơn hàng...</div>
+        <div class="orders-list" id="orders-list"></div>
+    </main>
+
+    <script src="../common/api.js"></script>
+    <script src="../common/category-menu.js"></script>
+    <script src="../signalr/signalr-client.js"></script>
+    <script src="../common/goo-button.js"></script>
+    <script src="orders.js"></script>
+</body>
+
+</html>

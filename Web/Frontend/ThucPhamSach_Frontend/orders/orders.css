@@ -1,0 +1,133 @@
+.orders-shell {
+    padding-top: 28px;
+}
+
+.orders-heading {
+    margin-bottom: 18px;
+}
+
+.eyebrow {
+    margin: 0 0 8px;
+    color: var(--green-700);
+    font-size: 0.78rem;
+    font-weight: 850;
+    text-transform: uppercase;
+}
+
+h1 {
+    margin: 0;
+    font-size: clamp(2rem, 5vw, 3.4rem);
+}
+
+.orders-list {
+    display: grid;
+    gap: 14px;
+}
+
+.order-card {
+    padding: 18px;
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    background: var(--white-glass);
+    backdrop-filter: saturate(180%) blur(20px);
+    -webkit-backdrop-filter: saturate(180%) blur(20px);
+    box-shadow: 0 18px 46px rgba(31, 104, 64, 0.13);
+}
+
+.order-head,
+.order-foot {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.order-head h2 {
+    margin: 0 0 6px;
+    font-size: 1.15rem;
+}
+
+.status-pill {
+    align-self: start;
+    padding: 7px 10px;
+    border-radius: var(--radius);
+    color: #164f80;
+    background: rgba(230, 244, 255, 0.76);
+    font-weight: 850;
+}
+
+.status-pill.status-pending {
+    color: #b45309;
+    background: rgba(255, 213, 153, 0.76);
+}
+
+.status-pill.status-confirmed {
+    color: #1e40af;
+    background: rgba(219, 234, 254, 0.76);
+}
+
+.status-pill.status-delivered {
+    color: #14532d;
+    background: rgba(187, 247, 208, 0.76);
+}
+
+.status-pill.status-cancelled {
+    color: #7f1d1d;
+    background: rgba(254, 202, 202, 0.76);
+}
+
+.order-items {
+    display: grid;
+    gap: 8px;
+    margin: 14px 0;
+    padding: 0;
+    list-style: none;
+}
+
+.order-items li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    padding: 10px;
+    border-radius: var(--radius);
+    background: rgba(255, 255, 255, 0.5);
+}
+
+.order-item-info {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.order-item-img {
+    width: 60px;
+    height: 45px;
+    object-fit: cover;
+    border-radius: 4px;
+    border: 1px solid var(--line);
+}
+
+.order-item-img-placeholder {
+    width: 60px;
+    height: 45px;
+    border-radius: 4px;
+    background: var(--green-100);
+    border: 1px solid var(--line);
+}
+
+.order-foot {
+    color: var(--muted);
+}
+
+.order-actions {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.order-total {
+    color: var(--green-700);
+    font-weight: 900;
+}

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đăng ký - Thực và vị</title>
+    <link rel="stylesheet" href="../common/common.css">
+    <link rel="stylesheet" href="../common/goo-button.css">
+    <link rel="stylesheet" href="register.css">
+</head>
+<body>
+    <header class="site-header"></header>
+
+    <main class="auth-shell page-shell">
+        <section class="auth-card glass-card">
+            <p class="eyebrow">Khách hàng mới</p>
+            <h1>Đăng ký</h1>
+            <p class="auth-copy">Tạo tài khoản để mua hàng và theo dõi đơn hàng.</p>
+
+            <div class="status-box is-hidden" id="register-status" role="status"></div>
+
+            <form class="form-grid" id="register-form">
+                <div class="field">
+                    <label for="hoTen">Họ tên</label>
+                    <input id="hoTen" name="hoTen" required>
+                </div>
+                <div class="field two-col">
+                    <div>
+                        <label for="tenDangNhap">Tên đăng nhập</label>
+                        <input id="tenDangNhap" name="tenDangNhap" required>
+                    </div>
+                    <div>
+                        <label for="matKhau">Mật khẩu</label>
+                        <input id="matKhau" name="matKhau" type="password" minlength="6" required>
+                    </div>
+                </div>
+                <div class="field two-col">
+                    <div>
+                        <label for="sdt">Số điện thoại</label>
+                        <input id="sdt" name="sdt">
+                    </div>
+                    <div>
+                        <label for="email">Email</label>
+                        <input id="email" name="email" type="email">
+                    </div>
+                </div>
+                <button class="primary-button" type="submit">Tạo tài khoản</button>
+            </form>
+
+            <p class="auth-switch">Đã có tài khoản? <a href="../login/login.html">Đăng nhập</a></p>
+        </section>
+    </main>
+
+    <script src="../common/api.js"></script>
+    <script src="../common/category-menu.js"></script>
+    <script src="../common/goo-button.js"></script>
+    <script src="register.js"></script>
+</body>
+</html>

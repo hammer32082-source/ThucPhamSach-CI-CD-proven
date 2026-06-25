@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sữa các loại - Thực và vị</title>
+    <link rel="preconnect" href="https://images.unsplash.com">
+    <link rel="stylesheet" href="../common/common.css">
+    <link rel="stylesheet" href="../common/goo-button.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont/tabler-icons.min.css">
+    <link rel="stylesheet" href="category.css">
+</head>
+<body>
+    <header class="site-header"></header>
+
+    <p class="breadcrumb">
+        <a href="../index.html">Trang chủ</a>
+        <span class="breadcrumb-parent-wrap is-hidden"> &nbsp;›&nbsp; <span id="breadcrumb-parent"></span></span>
+        &nbsp;›&nbsp; <span id="breadcrumb-title">Danh mục</span>
+    </p>
+
+    <div class="page-body">
+        <aside class="filters">
+            <h3>Bộ lọc</h3>
+            <div class="filter-group">
+                <h4>Khoảng giá</h4>
+                <div class="price-range">
+                    <input type="number" placeholder="Từ" id="price-from" min="0" step="1000">
+                    <span>—</span>
+                    <input type="number" placeholder="Đến" id="price-to" min="0" step="1000">
+                </div>
+                <button class="filter-apply" type="button" id="apply-price-filter">Áp dụng</button>
+            </div>
+            <div class="filter-group">
+                <h4>Nguồn gốc</h4>
+                <div id="origin-filters"></div>
+            </div>
+            <div class="filter-group">
+                <h4>Danh mục con</h4>
+                <div id="subcategory-filters"></div>
+            </div>
+            <button class="clear-filters" type="button" id="clear-filters">Xóa tất cả bộ lọc</button>
+        </aside>
+
+        <section class="products">
+            <div class="product-toolbar">
+                <div>
+                    <h1 id="category-title">Sữa các loại</h1>
+                    <span class="product-count" id="product-count">0 sản phẩm</span>
+                </div>
+                <select class="sort-select" id="sort-select">
+                    <option value="asc">Giá tăng dần</option>
+                    <option value="desc">Giá giảm dần</option>
+                </select>
+            </div>
+            <div class="status-box" id="product-status" role="status">Đang tải sản phẩm...</div>
+            <div class="product-grid" id="product-grid" aria-live="polite"></div>
+        </section>
+    </div>
+
+    <footer class="simple-footer" id="footer"></footer>
+
+    <script src="../common/api.js"></script>
+    <script src="../common/category-menu.js"></script>
+    <script src="../common/goo-button.js"></script>
+    <script src="category.js"></script>
+</body>
+</html>

@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Design System - Thực Phẩm Sạch</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:wght@600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f8fafc;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px;
+        }
+        .design-board {
+            background: #ffffff;
+            border-radius: 24px;
+            padding: 50px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+            width: 100%;
+            max-width: 900px;
+        }
+        .header-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 32px;
+            color: #1e293b;
+            margin-bottom: 40px;
+            border-bottom: 2px solid #e2e8f0;
+            padding-bottom: 15px;
+        }
+        .section-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 20px;
+            color: #64748b;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        /* Typography Section */
+        .typography-section {
+            margin-bottom: 50px;
+            display: flex;
+            gap: 40px;
+        }
+        .type-box {
+            flex: 1;
+            padding: 30px;
+            background: #f8fafc;
+            border-radius: 16px;
+            border: 1px solid #e2e8f0;
+        }
+        .font-montserrat { font-family: 'Montserrat', sans-serif; }
+        .font-inter { font-family: 'Inter', sans-serif; }
+        
+        .type-preview { font-size: 48px; margin: 0 0 10px 0; color: #0f172a; }
+        .type-name { font-size: 24px; font-weight: 700; margin: 0 0 5px 0; color: #16a34a; }
+        .type-desc { font-size: 14px; color: #64748b; margin: 0; }
+
+        /* Color Section */
+        .color-palette {
+            display: flex;
+            gap: 20px;
+        }
+        .color-card {
+            flex: 1;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            border: 1px solid #f1f5f9;
+        }
+        .color-display { height: 120px; width: 100%; }
+        .color-info {
+            padding: 15px;
+            background: #fff;
+            font-family: 'Inter', sans-serif;
+        }
+        .color-name { font-weight: 600; font-size: 15px; color: #1e293b; margin: 0 0 5px 0; }
+        .color-hex { font-size: 13px; color: #64748b; margin: 0; text-transform: uppercase;}
+
+        /* Specific Colors */
+        .bg-primary { background-color: #16a34a; }
+        .bg-secondary { background-color: #dcfce7; }
+        .bg-dark { background-color: #1e293b; }
+        .bg-accent { background-color: #f59e0b; }
+        .bg-bg { background-color: #f8fafc; border: 1px solid #e2e8f0;}
+    </style>
+</head>
+<body>
+
+    <div class="design-board">
+        <h1 class="header-title">Hệ thống Thiết kế (Design System)</h1>
+
+        <!-- Typography -->
+        <h2 class="section-title">1. Nghệ thuật chữ (Typography)</h2>
+        <div class="typography-section">
+            <div class="type-box font-montserrat">
+                <p class="type-preview">Aa</p>
+                <p class="type-name">Montserrat</p>
+                <p class="type-desc">Sử dụng cho Tiêu đề (Headings) & Nút bấm</p>
+            </div>
+            <div class="type-box font-inter">
+                <p class="type-preview" style="font-weight: 500;">Aa</p>
+                <p class="type-name">Inter</p>
+                <p class="type-desc">Sử dụng cho Nội dung văn bản (Body Text)</p>
+            </div>
+        </div>
+
+        <!-- Colors -->
+        <h2 class="section-title">2. Bảng màu chủ đạo (Color Palette)</h2>
+        <div class="color-palette">
+            <div class="color-card">
+                <div class="color-display bg-primary"></div>
+                <div class="color-info">
+                    <p class="color-name">Xanh Tươi Mát</p>
+                    <p class="color-hex">#16a34a</p>
+                </div>
+            </div>
+            <div class="color-card">
+                <div class="color-display bg-secondary"></div>
+                <div class="color-info">
+                    <p class="color-name">Xanh Nền (Nhạt)</p>
+                    <p class="color-hex">#dcfce7</p>
+                </div>
+            </div>
+            <div class="color-card">
+                <div class="color-display bg-accent"></div>
+                <div class="color-info">
+                    <p class="color-name">Cam Cảnh Báo</p>
+                    <p class="color-hex">#f59e0b</p>
+                </div>
+            </div>
+            <div class="color-card">
+                <div class="color-display bg-dark"></div>
+                <div class="color-info">
+                    <p class="color-name">Đen Xám (Chữ)</p>
+                    <p class="color-hex">#1e293b</p>
+                </div>
+            </div>
+            <div class="color-card">
+                <div class="color-display bg-bg"></div>
+                <div class="color-info">
+                    <p class="color-name">Xám Trắng (Nền)</p>
+                    <p class="color-hex">#f8fafc</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

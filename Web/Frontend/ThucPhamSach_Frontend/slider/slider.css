@@ -1,0 +1,92 @@
+/* Swiper Slide Styles */
+.swiper-button-next,
+.swiper-button-prev {
+    color: white !important;
+}
+
+/* Pagination Bullets với SVG Progress */
+.swiper-pagination {
+    bottom: 30px !important;
+}
+
+.swiper-pagination-bullet {
+    background: none;
+    opacity: 1;
+    width: auto;
+    height: auto;
+    margin: 0 6px !important;
+}
+
+.swiper-pagination-bullet--svg {
+    width: 26px;
+    height: 26px;
+    display: inline-flex;
+}
+
+.swiper-pagination-bullet--svg svg {
+    transform: rotate(-90deg);
+}
+
+.svg-progress {
+    stroke: #00ff33;
+    stroke-width: 2;
+    fill: none;
+    stroke-dasharray: 75;
+    stroke-dashoffset: 75;
+    opacity: 0.5;
+}
+
+.svg-dot {
+    stroke: #fff;
+    fill: transparent;
+    transition: fill 0.5s ease;
+}
+
+@keyframes progress {
+    0% { stroke-dashoffset: 75; opacity: 1; }
+    95% { stroke-dashoffset: 0; opacity: 1; }
+    100% { stroke-dashoffset: 0; opacity: 0.5; }
+}
+
+.swiper-pagination-bullet-active .svg-progress {
+    animation: progress 5s ease-in-out forwards;
+}
+
+.swiper-pagination-bullet-active .svg-dot {
+    fill: #fff;
+}
+
+.hero-slide-bg {
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+}
+
+.swiper-container {
+    width: 100%;
+    height: clamp(520px, 72vh, 720px);
+}
+
+.swiper-slide {
+    position: relative;
+    display: flex;
+    align-items: stretch; /* ensure hero-inner takes full height */
+    justify-content: center;
+    height: 100%;
+}
+
+.hero-overlay {
+    z-index: 1 !important;
+    position: absolute;
+    inset: 0;
+}
+
+.hero-inner {
+    z-index: 2 !important;
+    width: 100%;
+    height: 100%;
+}
