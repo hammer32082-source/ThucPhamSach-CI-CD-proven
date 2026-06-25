@@ -21,12 +21,7 @@ jobs:
       with:
         java-version: '17'
         distribution: 'temurin'
-
-    # Bước 3: Cài đặt trình duyệt Chrome để chạy Selenium ẩn (Headless)
-    - name: Setup Chrome
-      uses: browser-actions/setup-chrome@latest
-
-    # Bước 4: Chạy kiểm thử tự động (Selenium - Java)
+    # Bước 3: Chạy kiểm thử tự động (Selenium - Java)
     - name: Run Selenium Functional Tests
       run: |
         echo "Bắt đầu chạy kiểm thử chức năng tự động với Selenium..."
