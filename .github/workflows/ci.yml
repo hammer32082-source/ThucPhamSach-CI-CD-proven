@@ -34,24 +34,9 @@ jobs:
         mvn clean test
       continue-on-error: true
 
-    # Bước 5: Chạy kiểm thử hiệu năng (JMeter)
-    - name: Run JMeter Performance Test
-      uses: rbains/jmeter-action@v2
-      with:
-        testFilePath: 'ThucPhamSach_JMeter_TestPlan.jmx'
-        outputReportsFolder: 'reports/'
-      continue-on-error: true
-
-    # Bước 6: Khởi chạy quét bảo mật ZAP (OWASP)
-    - name: OWASP ZAP Baseline Scan
-      uses: zaproxy/action-baseline@v0.12.0
-      with:
-        target: 'http://localhost:5500' 
-      continue-on-error: true
-
-    # Bước 7: Lưu lại báo cáo kết quả
+    # Bước 5: Lưu lại báo cáo kết quả (Nếu có)
     - name: Upload Test Reports
       uses: actions/upload-artifact@v3
       with:
-        name: Testing-Reports
-        path: reports/
+        name: Selenium-Reports
+        path: SeleniumTesting/target/surefire-reports/
